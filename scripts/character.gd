@@ -79,16 +79,25 @@ func _physics_process(delta: float) -> void:
 
 func try_interact():
 	if not ray.is_colliding():
+		print("RayCast: not colliding")
 		return
 
 	var collider := ray.get_collider()
 	if collider == null:
+		print("RayCast: collider is null")
 		return
 
 	var n := collider as Node
-	if n == null:
+	print("RayCast hit:", n.name)
+
+	# Look for a child node literally named "togglescript"
+	var marker := n.get_node_or_null("togglescript")
+	if marker == null:
+		print("No child named 'togglescript' under:", n.name)
 		return
 
-	var marker := n.get_node_or_null("togglescript")
-	if marker != null and marker.has_method("interact"):
+	if marker.has_method("interact"):
 		marker.call("interact")
+		print("called interact() on togglescript")
+	else:
+		print("'togglescript' has no interact()")

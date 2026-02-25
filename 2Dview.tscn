@@ -218,7 +218,7 @@ texture = ExtResource("3_7rx1n")
 [node name="Somewall" type="StaticBody2D" parent="Obstacle" unique_id=648393832]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle/Somewall" unique_id=400095031]
-position = Vector2(22, -120)
+position = Vector2(16, -40)
 shape = SubResource("RectangleShape2D_sexlq")
 
 [node name="Somewall2" type="StaticBody2D" parent="Obstacle" unique_id=1354168989]

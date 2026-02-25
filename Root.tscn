@@ -41,6 +41,8 @@ stretch = true
 [node name="VP2D" type="SubViewport" parent="View2D" unique_id=1113607947]
 handle_input_locally = false
 size = Vector2i(1152, 648)
+size_2d_override = Vector2i(432, 243)
+size_2d_override_stretch = true
 render_target_update_mode = 4
 
 [node name="2Dview" parent="View2D/VP2D" unique_id=1616084592 instance=ExtResource("2_170dk")]
@@ -48,6 +50,7 @@ render_target_update_mode = 4
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1233890163]
 
 [node name="overlay3Din2D" type="TextureRect" parent="CanvasLayer" unique_id=777398832]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
