@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://k3e7ym5uhpji"]
+
+[ext_resource type="PackedScene" uid="uid://dagimfp2bcee7" path="res://3Dview.tscn" id="1_24d08"]
+[ext_resource type="Script" uid="uid://be7nsvjifbo08" path="res://scripts/root.gd" id="1_170dk"]
+[ext_resource type="PackedScene" uid="uid://dhfpsj7eik7jm" path="res://2Dview.tscn" id="2_170dk"]
+
+[node name="RootNode" type="Control" unique_id=648516650]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_170dk")
+
+[node name="View3D" type="SubViewportContainer" parent="." unique_id=1758526131]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="VP3D" type="SubViewport" parent="View3D" unique_id=1469021347]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="3Dview" parent="View3D/VP3D" unique_id=1894227377 instance=ExtResource("1_24d08")]
+
+[node name="View2D" type="SubViewportContainer" parent="." unique_id=1126144112]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="VP2D" type="SubViewport" parent="View2D" unique_id=1113607947]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="2Dview" parent="View2D/VP2D" unique_id=1616084592 instance=ExtResource("2_170dk")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1233890163]
+
+[node name="overlay3Din2D" type="TextureRect" parent="CanvasLayer" unique_id=777398832]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="State" type="Label" parent="CanvasLayer" unique_id=2074856275]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "3D View"

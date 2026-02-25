@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://dagimfp2bcee7"]
+
+[ext_resource type="Script" uid="uid://d275aa1ys7l3r" path="res://scripts/character.gd" id="1_1ehhs"]
+[ext_resource type="Script" uid="uid://cd4cfh71wrqhv" path="res://scripts/togglescript.gd" id="2_xsyhy"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v6fje"]
+radius = 0.4
+height = 1.5
+
+[sub_resource type="BoxMesh" id="BoxMesh_1k5vq"]
+size = Vector3(20, 1, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1ehhs"]
+size = Vector3(20, 1, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xsyhy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xvw5a"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_i1wse"]
+size = Vector2(1, 0.5)
+
+[node name="3Dview" type="Node3D" unique_id=1894227377]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=67763184]
+
+[node name="Character" type="CharacterBody3D" parent="." unique_id=1670697758]
+floor_snap_length = 0.2
+script = ExtResource("1_1ehhs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Character" unique_id=9456242]
+shape = SubResource("CapsuleShape3D_v6fje")
+
+[node name="Camera3D" type="Camera3D" parent="Character" unique_id=1252456308]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+current = true
+
+[node name="RayCast3D" type="RayCast3D" parent="Character" unique_id=1099872518]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+target_position = Vector3(0, -1, -3)
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=113331041]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=897937677]
+mesh = SubResource("BoxMesh_1k5vq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=1235714434]
+shape = SubResource("BoxShape3D_1ehhs")
+
+[node name="Somebox" type="StaticBody3D" parent="." unique_id=1957197374]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Somebox" unique_id=1317722020]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, -3)
+mesh = SubResource("BoxMesh_xsyhy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Somebox" unique_id=1291672776]
+shape = SubResource("BoxShape3D_xvw5a")
+
+[node name="togglescript" type="Node" parent="Somebox" unique_id=1661002212]
+script = ExtResource("2_xsyhy")
+
+[node name="2Dviewport" type="MeshInstance3D" parent="." unique_id=575190932]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -2, 2, -3)
+mesh = SubResource("PlaneMesh_i1wse")

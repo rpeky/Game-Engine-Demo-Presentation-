@@ -1,0 +1,34 @@
+T-637-GEDE Game Engine Demo Presentation
+Group 11 - Ryan Pek Yi Ze
+
+Godot 4 (4.6) was picked because:
+(1) It had the word Ogre next to it in the engine list and 
+(2) I've seen it before in my home university but have never touched it, so this would be a good chance to try it out
+
+I went through the godot documentation, some videos on youtube and some site called gdquest. I have listed the accessed documents below
+
+    https://docs.godotengine.org/en/stable/index.html
+    https://docs.godotengine.org/en/stable/getting_started/step_by_step/index.html
+    https://www.gdquest.com/tutorial/godot/
+
+    Skimmed through the video tutorials (they are pretty long)
+    https://www.youtube.com/watch?v=0gVdAPjjGmo
+    https://www.youtube.com/watch?v=TLG2yVpLDT8
+    https://www.youtube.com/watch?v=LOhfqjmasi0
+    https://www.youtube.com/watch?v=DSUFph0BvJo
+
+Resources used
+    
+
+Initial observations
+Godot is an engine that offers features for game development in both 2D and 3D.
+It may be a little greedy, but I want to try making a prototype that swaps between 2D and 3D rendering via some kind of mechanism.
+Objectives I have set are
+    to make something simple, 
+    able to move and view the environment,
+    interact with the environment/other nodes,
+    some kind of mechanism or keybind to swap between 2d/3d
+
+
+Stuff Done
+    Input mapping (basic wasd/updownleftright/space/e/p)
